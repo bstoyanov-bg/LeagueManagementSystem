@@ -5,6 +5,12 @@ namespace LeagueApi.Models
 {
     public class Team
     {
+        public Team()
+        {
+            HomeMatches = new HashSet<Match>();
+            AwayMatches = new HashSet<Match>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }

@@ -199,9 +199,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Data\SeedData.cs" />
+    <Compile Include="DTOs\TeamCreateDto.cs" />
+    <Compile Include="DTOs\TeamUpdateDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -308,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Teams\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
