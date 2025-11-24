@@ -7,7 +7,7 @@ namespace LeagueApi.Data
     {
         public AppDbContext() : base("DefaultConnection")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AppDbContext, Migrations.Configuration>());
         }
 
         public DbSet<Team> Teams { get; set; }

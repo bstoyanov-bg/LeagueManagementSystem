@@ -1,4 +1,5 @@
 ﻿using LeagueApi.App_Start;
+using LeagueApi.Data;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -16,6 +17,7 @@ namespace LeagueApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            SeedData.Seed(new AppDbContext());
         }
     }
 }
