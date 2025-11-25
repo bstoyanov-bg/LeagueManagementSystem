@@ -199,9 +199,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MatchesController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Data\SeedData.cs" />
+    <Compile Include="DTOs\MatchUpdateDto.cs" />
     <Compile Include="DTOs\TeamCreateDto.cs" />
     <Compile Include="DTOs\TeamUpdateDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -238,6 +240,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Compile Include="DTOs\MatchCreateDto.cs" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -310,6 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Matches\" />
     <Folder Include="Views\Teams\" />
   </ItemGroup>
   <ItemGroup>
