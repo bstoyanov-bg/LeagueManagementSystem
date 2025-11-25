@@ -13,6 +13,8 @@ namespace LeagueApi
             json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
 
+            config.Filters.Add(new GlobalExceptionFilter());
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

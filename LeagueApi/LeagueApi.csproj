@@ -206,6 +206,7 @@
     <Compile Include="DTOs\MatchUpdateDto.cs" />
     <Compile Include="DTOs\TeamCreateDto.cs" />
     <Compile Include="DTOs\TeamUpdateDto.cs" />
+    <Compile Include="Filters\GlobalExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
