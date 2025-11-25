@@ -29,10 +29,60 @@ namespace LeagueApi.Services
 
             var rankings = teams.Select(t => new TeamRankingDto
             {
-                
-            }).ToList();
+                TeamId = t.Id,
+                TeamName = t.Name,
+                Played = 0,
+                Wins = 0,
+                Draws = 0,
+                Losses = 0,
+                GoalsFor = 0,
+                GoalsAgainst = 0,
+                Points = 0
+            }).ToDictionary(r => r.TeamId);
 
-            return rankings;
+            foreach (var m in matches)
+            {
+                if (!rankings.ContainsKey(m.HomeTeamId) || !rankings.ContainsKey(m.AwayTeamId))
+                {
+                    continue;
+                }
+
+                var home = rankings[m.HomeTeamId];
+                var away = rankings[m.AwayTeamId];
+
+                home.Played++; 
+                away.Played++;
+
+                home.GoalsFor += m.HomeTeamScore;
+                home.GoalsAgainst += m.AwayTeamScore;
+
+                away.GoalsFor += m.AwayTeamScore;
+                away.GoalsAgainst += m.HomeTeamScore;
+
+                var (homePoints, awayPoints) = _scoring.GetPoints(m.HomeTeamScore, m.AwayTeamScore);
+
+                home.Points += homePoints;
+                away.Points += awayPoints;
+
+                if (homePoints > awayPoints)
+                {
+                    home.Wins++; away.Losses++;
+                }
+                else if (homePoints < awayPoints)
+                {
+                    away.Wins++; home.Losses++;
+                }
+                else
+                {
+                    home.Draws++; away.Draws++;
+                }
+            }
+
+            return rankings.Values
+                .OrderByDescending(r => r.Points)
+                .ThenByDescending(r => r.GoalDifference)
+                .ThenByDescending(r => r.GoalsFor)
+                .ToList();
         }
     }
 }
