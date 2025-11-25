@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\Controllers\SwaggerRedirectController.cs" />
+    <Compile Include="Api\Controllers\TestExceptionController.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -214,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\SwaggerRedirect\" />
+    <Folder Include="Views\TestException\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
