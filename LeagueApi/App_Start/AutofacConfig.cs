@@ -2,6 +2,7 @@
 using Autofac.Integration.WebApi;
 using LeagueApi.Data;
 using LeagueApi.Repositories;
+using LeagueApi.Scoring;
 using System.Reflection;
 using System.Web.Http;
 
@@ -21,6 +22,9 @@ namespace LeagueApi.App_Start
 
             // Repositories - UnitOfWork
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
+
+            // Register services
+            builder.RegisterType<StandardScoringStrategy>().As<IScoringStrategy>().InstancePerRequest();
 
             var container = builder.Build();
             var resolver = new AutofacWebApiDependencyResolver(container);
