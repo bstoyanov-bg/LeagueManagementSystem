@@ -16,7 +16,6 @@ namespace LeagueApi
             AutofacConfig.Register();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
             SeedData.Seed(new AppDbContext());
         }
     }

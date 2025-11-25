@@ -13,10 +13,11 @@ namespace LeagueApi
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Redirect root URL to /swagger for easy testing
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "SwaggerRedirect",
+                url: "",
+                defaults: new { controller = "SwaggerRedirect", action = "Index" }
             );
         }
     }
