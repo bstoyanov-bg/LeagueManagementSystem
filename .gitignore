@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /LeagueApi/Controllers/TeamsController.cs
+
+# Ignore secret configuration files
+secret-connection.config.xml

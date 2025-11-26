@@ -205,6 +205,8 @@
     <Compile Include="Api\DTOs\MatchCreateDto.cs" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="secret-connection.config.example.xml" />
+    <Content Include="secret-connection.config.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

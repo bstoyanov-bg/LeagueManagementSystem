@@ -112,8 +112,10 @@ LeagueApi/
 - Open Package Manager Console -> Update-Package -reinstall
 
 4. Configure the database
-- Open Web.config and update the connection string:
+- Copy the example file - "secret-connection-example.config.xml" and rename it to "secret-connection.config.xml" 
+- Than add your actual credentials and save it!
 
+<?xml version="1.0"?>
 <connectionStrings>
   <add name="DefaultConnection"
        connectionString="Server=YOUR_SERVER;Database=LeagueDb;User Id=USER;Password=PASS;TrustServerCertificate=True;"
